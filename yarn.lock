@@ -12703,6 +12703,13 @@ taro-ui@^3.0.0-alpha.3:
     lodash "^4.17.10"
     prop-types "^15.7.2"
 
+tarojs-plugin-generator@0.0.21:
+  version "0.0.21"
+  resolved "https://registry.npm.taobao.org/tarojs-plugin-generator/download/tarojs-plugin-generator-0.0.21.tgz#7ec9316ac964178380178242072fa5c127309582"
+  integrity sha1-fskxaslkF4OAF4JCBy+lwScwlYI=
+  dependencies:
+    glob "^7.1.6"
+
 term-size@^1.2.0:
   version "1.2.0"
   resolved "https://registry.npm.taobao.org/term-size/download/term-size-1.2.0.tgz#458b83887f288fc56d6fffbfad262e26638efa69"

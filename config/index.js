@@ -9,7 +9,13 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
-  plugins: [],
+  plugins: [
+
+    ['tarojs-plugin-generator',{
+      css:'less',  //可配置css编译器： 支持 none sass less stylus
+      cssModules:'page',      //开启页面的CssModule化
+    }]
+  ],
   defineConstants: {
   },
   copy: {
