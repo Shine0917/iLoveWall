@@ -3,9 +3,10 @@ import cx from 'classnames'
 import { View,OpenData } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 import { AtAvatar } from 'taro-ui'
+// import  './mine.less'
 import styles from './mine.module.less'
-// import "~taro-ui/dist/style/components/avatar.scss";
 
+import "taro-ui/dist/style/components/avatar.scss" // 按需引入
 
 
 const MinePage=() =>{
@@ -26,12 +27,12 @@ const MinePage=() =>{
   // },[])
 
   return (
-  <View className={styles.MinePage}>
-  <AtAvatar openData={{type:"userAvatarUrl"}} size='small' circle={true} className={styles.avatar}></AtAvatar>
-    {/* <OpenData type="userAvatarUrl"></OpenData> */}
-    <OpenData type="userNickName"></OpenData>
-    <OpenData type="userGender" lang="zh_CN"></OpenData>
-  </View>
+    <View className={styles.MinePage}>
+      <AtAvatar openData={{type:"userAvatarUrl"}} size='large' circle></AtAvatar>
+      {/* <OpenData type="userAvatarUrl"></OpenData> */}
+      <OpenData type='userNickName'></OpenData>
+      <OpenData type='userGender' lang='zh_CN'></OpenData>
+    </View>
   )
 
   
