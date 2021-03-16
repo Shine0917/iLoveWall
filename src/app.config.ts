@@ -1,5 +1,5 @@
 export default {
-  pages: ['pages/index/index',"pages/mine/mine",],
+  pages: ['pages/index/index', "pages/mine/mine",],
   tabBar: {
     list: [
       {
@@ -14,18 +14,11 @@ export default {
       pagePath: 'pages/mine/mine',
       text: '我的'
     }, 
-    // {
-    //   'iconPath': 'resource/node.png',
-    //   'selectedIconPath': 'resource/node_on.png',
-    //   pagePath: 'pages/nodes/nodes',
-    //   text: '节点'
-    // }
   ],
     'color': '#000',
     'selectedColor': '#56abe4',
     'backgroundColor': '#fff',
     'borderStyle': 'black',
-    "fontSize":'16px',
   },
   window: {
     backgroundTextStyle: 'light',
