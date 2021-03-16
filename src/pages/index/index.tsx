@@ -9,7 +9,10 @@ import './index.less'
   const [current,setCurrent] = useState<number>(0)
 
 
-
+const goToPublish = () => {
+  Taro.reLaunch({
+    url: "/pages/publish/publish"
+  });}
     return (
       <View className='index'>
         {/* <Text>Hello world!</Text>
@@ -18,7 +21,8 @@ import './index.less'
         <AtButton type='primary' circle={true}>支持</AtButton>
         <Text>共建？</Text>
         // <AtButton type='secondary' circle={true}>来</AtButton> */}
-      index
+       index
+      <AtButton onClick={goToPublish}>发布动态</AtButton>
       </View>
     )
   }
