@@ -6,7 +6,7 @@
   "templateInfo": {
     "name": "taro-ui",
     "typescript": true,
-    "css": "less"
+    "css": "scss"
   },
   "scripts": {
     "build:weapp": "taro build --type weapp",
@@ -27,7 +27,8 @@
     "dev:qq": "npm run build:qq -- --watch",
     "dev:jd": "npm run build:jd -- --watch",
     "dev:quickapp": "npm run build:quickapp -- --watch",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "prettier": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\" \"src/**/*.scss\""
   },
   "browserslist": [
     "last 3 versions",
@@ -83,7 +84,10 @@
     }
   },
   "lint-staged": {
-    "*.{js,less,md,ts,tsx}": "prettier --write"
+    "**/*.{ts,tsx,scss}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "config": {
     "commitizen": {
