@@ -6,7 +6,7 @@ declare module '*.svg'
 declare module '*.css'
 // declare module '*.scss';
 
-declare module '*.module.less' {
+declare module '*.module.scss' {
   const classes: { [key: string]: string }
   export default classes
 }

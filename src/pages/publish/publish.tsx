@@ -1,7 +1,7 @@
 import React, { FC, useRef } from 'react'
 import cx from 'classnames'
 import { View, RichText } from '@tarojs/components'
-import styles from './publish.module.less'
+import styles from './publish.module.scss'
 
 const PublishPage: FC = () => {
   const textRef = useRef(null)
