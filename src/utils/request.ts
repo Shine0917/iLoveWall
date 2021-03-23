@@ -33,7 +33,7 @@ export default (options: OptionsType = { method: 'GET', data: {}, url: '', noLoa
       'X-Token': Taro.getStorageSync('token'),
       'Content-Type': 'application/json',
     },
-    method: options.method.toUpperCase(),
+    method: options.method,
   }).then((res) => {
     setTimeout(() => {
       Taro.hideLoading()
