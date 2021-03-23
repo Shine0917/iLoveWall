@@ -1,3 +1,3 @@
 export default {
-  navigationBarTitleText: '动态'
+  navigationBarTitleText: '动态',
 }
