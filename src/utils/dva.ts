@@ -6,7 +6,6 @@ let store
 let dispatch
 
 function createApp(opt) {
-  // redux日志
   app = create(opt)
   app.use(createLoading({}))
 
