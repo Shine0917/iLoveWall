@@ -1,6 +1,19 @@
 import Taro from '@tarojs/taro'
+import { Reducer } from 'redux'
+import { userInfoType } from '../@type/common'
 
-export default {
+export interface CommonModelState {
+  accessToken: string
+  userInfo: userInfoType
+}
+export interface CommonModelType {
+  namespace: string
+  state: CommonModelState
+  effects: {}
+  reducers: { save: Reducer<CommonModelState> }
+}
+
+const CommonModel: CommonModelType = {
   namespace: 'common', // 全局 state 上的 key
   state: {
     // 初始值 - 同步更新
@@ -15,3 +28,4 @@ export default {
     },
   },
 }
+export default CommonModel

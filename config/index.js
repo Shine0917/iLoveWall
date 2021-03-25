@@ -1,3 +1,5 @@
+import path from 'path'
+
 const config = {
   projectName: 'iLoveWall',
   date: '2021-3-14',
@@ -19,6 +21,9 @@ const config = {
     ],
   ],
   defineConstants: {},
+  alias: {
+    '@models': path.resolve(__dirname, 'src/models'),
+  },
   copy: {
     patterns: [],
     options: {},

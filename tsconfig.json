@@ -21,9 +21,7 @@
     "resolveJsonModule": true,
     "typeRoots": ["node_modules/@types", "global.d.ts"],
     "paths": {
-      "@/components/*": ["./src/components"],
-      "@/constants/*": ["./src/constants"],
-      "@/actions/*": ["./src/actions"]
+      "@models/*": ["./src/models/*"]
     }
   },
   "exclude": ["node_modules", "dist"],
