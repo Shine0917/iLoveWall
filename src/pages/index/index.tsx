@@ -8,11 +8,12 @@ import { CommonModelState, ConnectProps, ConnectState } from '@models/connect'
 
 interface IndexProps extends ConnectProps {
   common: CommonModelState
+  count: number
 }
 
-const Index: React.FC<IndexProps> = (common) => {
-  console.log('%c AT-[ common ]-14', 'font-size:13px; background:#de4307; color:#f6d04d;', common)
-
+const Index: React.FC<IndexProps> = (props) => {
+  console.log('%cJudith-[ props ]: ', 'color: #bf2c9f; background: pink; font-size: 13px;', props)
+  const { count, dispatch } = props
   const goToPublish = () => {
     Taro.reLaunch({
       url: '/pages/publish/publish',
@@ -20,12 +21,22 @@ const Index: React.FC<IndexProps> = (common) => {
   }
 
   useEffect(() => {}, [])
+  const handleClick = () => {
+    dispatch({
+      type: 'common/addCount',
+      payload: { count: count + 1 },
+    })
+  }
 
   return (
     <View className={styles.index}>
       <AtButton onClick={goToPublish}>发布动态</AtButton>
+      <AtButton onClick={handleClick}>+1</AtButton>
+      <AtButton>{count}</AtButton>
     </View>
   )
 }
 
-export default connect(({ common }: ConnectState) => ({ common }))(Index)
+export default connect((state) => ({
+  count: state.common.count,
+}))(Index)
