@@ -5,6 +5,7 @@ import { userInfoType } from '../@type/common'
 export interface CommonModelState {
   accessToken: string
   userInfo: userInfoType
+  count: number
 }
 export interface CommonModelType {
   namespace: string
@@ -29,11 +30,7 @@ const CommonModel: CommonModelType = {
       return { ...state, ...payload }
     },
     addCount(state, { payload }) {
-      console.log('%cJudith-[ payload ]: ', 'color: #bf2c9f; background: pink; font-size: 13px;', payload)
-      return {
-        ...state,
-        count: payload.count,
-      }
+      return { ...state, ...payload }
     },
   },
 }

@@ -12,7 +12,6 @@ interface IndexProps extends ConnectProps {
 }
 
 const Index: React.FC<IndexProps> = (props) => {
-  console.log('%cJudith-[ props ]: ', 'color: #bf2c9f; background: pink; font-size: 13px;', props)
   const { count, dispatch } = props
   const goToPublish = () => {
     Taro.reLaunch({
@@ -21,6 +20,7 @@ const Index: React.FC<IndexProps> = (props) => {
   }
 
   useEffect(() => {}, [])
+
   const handleClick = () => {
     dispatch({
       type: 'common/addCount',
@@ -37,6 +37,4 @@ const Index: React.FC<IndexProps> = (props) => {
   )
 }
 
-export default connect((state) => ({
-  count: state.common.count,
-}))(Index)
+export default connect(({ common }: ConnectState) => ({ ...common }))(Index)
