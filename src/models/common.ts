@@ -1,6 +1,7 @@
 import Taro from '@tarojs/taro'
 import { Reducer } from 'redux'
 import { userInfoType } from '../@type/common'
+import { fetchFn } from '../api/index'
 
 export interface CommonModelState {
   accessToken: string
@@ -23,7 +24,11 @@ const initialState = {
 const CommonModel: CommonModelType = {
   namespace: 'common', // 全局 state 上的 key
   state: initialState,
-  effects: {}, // 处理异步逻辑
+  effects: {
+    *createDynamic({ payload }, { call }) {
+      return yield call(fetchFn, payload)
+    },
+  },
   reducers: {
     // 等同于 redux 里的 reducer，接收 action，同步更新 state
     save(state, { payload }) {
