@@ -1,7 +1,7 @@
 import { PageConfig } from '@tarojs/taro'
 
 const config: PageConfig = {
-  navigationBarTitleText: 'weChat',
+  navigationBarTitleText: '发布动态',
 }
 
 export default config
