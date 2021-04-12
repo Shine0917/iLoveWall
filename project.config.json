@@ -2,6 +2,7 @@
   "miniprogramRoot": "dist/",
   "projectname": "iLoveWall",
   "description": "表白墙",
+  "cloudfunctionRoot": "functions/",
   "appid": "wxfae03ce8c996b03f",
   "setting": {
     "urlCheck": false,
