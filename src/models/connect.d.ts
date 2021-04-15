@@ -1,5 +1,6 @@
 import { AnyAction, Dispatch } from 'redux'
 import { CommonModelState } from './common'
+import { UserModelState } from './user'
 
 export interface Loading {
   global: boolean
@@ -13,6 +14,7 @@ export interface ConnectProps {
 export interface ConnectState {
   loading: Loading
   common: CommonModelState
+  user: UserModelState
 }
 
-export { CommonModelState }
+export { CommonModelState, UserModelState }
