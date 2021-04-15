@@ -1,4 +1,8 @@
 export interface userInfoType {
-  id: string
-  avatar: string
+  _id?: string
+  openId?: string
+  roles?: Array<number>
+  createAt?: Date
+  updateAt?: Date
+  userInfo?: string
 }
