@@ -1,22 +1,39 @@
 import { fetchFn } from '../api/index'
+import { userInfoType } from '../@type/common'
 
-export interface CommonModelState {}
+export interface UserModelState {
+  userInfo: userInfoType
+}
+
 export interface CommonModelType {
   namespace: string
-  state: CommonModelState
+  state: UserModelState
   effects: {}
   reducers: {}
 }
-const initialState = {}
+
+const initialState = {
+  userInfo: {},
+}
 
 const CommonModel: CommonModelType = {
-  namespace: 'login',
+  namespace: 'user',
   state: initialState,
   effects: {
     *login({ payload }, { call }) {
       return yield call(fetchFn, payload)
     },
+    *getUserInfo({ payload }, { call }) {
+      return yield call(fetchFn, payload)
+    },
+    *updateUserInfo({ payload }, { call }) {
+      return yield call(fetchFn, payload)
+    },
   },
-  reducers: {},
+  reducers: {
+    saveUserInfo(state, { payload }) {
+      return { ...state, ...payload }
+    },
+  },
 }
 export default CommonModel
