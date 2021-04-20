@@ -8,9 +8,11 @@ const db = cloud.database()
 
 // 创建动态
 const createDynamic = async (content) => {
+  const { OPENID } = cloud.getWXContext()
   return await db.collection('dynamic').add({
     data: {
       content,
+      openId: OPENID,
       createdAt: db.serverDate(),
       updatedAt: db.serverDate(),
     },
