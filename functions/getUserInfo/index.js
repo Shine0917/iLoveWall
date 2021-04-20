@@ -2,14 +2,14 @@
 const cloud = require('wx-server-sdk')
 
 cloud.init({
-  env: 'dev-1gboiotta79671d6',
+  env: cloud.DYNAMIC_CURRENT_ENV,
 })
 
 const db = cloud.database()
 // 云函数入口函数
 exports.main = async (event, context) => {
   const { OPENID, APPID, UNIONID } = cloud.getWXContext()
-  const authUserInfo = event.authUserInfo || null
+  const authUserInfo = event.authUserInfo || {}
   const roles = event.roles || []
   // 在 users 表中根据 openId 查找用户，返回的是数组
   const { data: userList } = await db.collection('users').where({ openId: OPENID }).get()
