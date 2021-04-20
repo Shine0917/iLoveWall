@@ -47,6 +47,8 @@ const PublishPage: React.FC<PublishProps> = (props: any) => {
       payload: { apiName: GET_USER_INFO, data: { authUserInfo } },
     }).then((res) => {
       if (res.code === 200) {
+        setIsOpened(true)
+        setTostText('授权成功')
         dispatch({
           type: 'user/saveUserInfo',
           payload: { userInfo: res.data },
@@ -56,11 +58,12 @@ const PublishPage: React.FC<PublishProps> = (props: any) => {
   }
 
   const onSubmit = () => {
-    if (!userInfo.userInfo) {
-      Taro.getUserProfile({
+    if (!userInfo.userInfo.nickName) {
+      return Taro.getUserProfile({
         desc: '用于完善会员资料',
         lang: 'zh_CN',
         success: (result) => {
+          console.log('%c AT-[ result ]-64', 'font-size:13px; background:#de4307; color:#f6d04d;', result)
           updateUserInfo(result.userInfo)
         },
       })
@@ -69,6 +72,7 @@ const PublishPage: React.FC<PublishProps> = (props: any) => {
       type: `common/createDynamic`,
       payload: { apiName: 'createDynamic', data: { content } },
     }).then((res) => {
+      console.log('%c AT-[ res ]-72', 'font-size:13px; background:#de4307; color:#f6d04d;', res)
       const { code } = res
       if (code === 200) {
         setIsOpened(true)
@@ -77,7 +81,7 @@ const PublishPage: React.FC<PublishProps> = (props: any) => {
           Taro.reLaunch({
             url: '/pages/index/index',
           })
-        }, 1000)
+        }, 500)
       }
     })
   }
